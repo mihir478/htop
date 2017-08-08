@@ -1,4 +1,3 @@
-
 var express = require('express');
 var http = require('http');
 var app = express();
@@ -13,7 +12,7 @@ var loadHistory = {currentload: [], cpus: {}};
 loadHistory.currentload = new Array(30);
 
 io.on('connection', function (socket) {
-  socket.on('action', function(msg){
+  socket.on('action', function(msg) {
     ps.kill(msg.PID, msg.action, function( err ) {
       if (err) {
         console.log(err);
